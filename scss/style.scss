@@ -3,7 +3,7 @@
   padding: 0;
 }
 html {
-  margin-top: 300px;
+  margin-top: 100px;
 }
 
 body {
@@ -11,7 +11,8 @@ body {
   font-family: arial;
   background-color: darkolivegreen;
   color: white;
-  max-width: 780px;
+  max-width: 1200px;
+
   margin: auto;
 }
 .text {
@@ -30,23 +31,54 @@ button {
   transition: 0.3s;
   margin-bottom: 10px;
   overflow: hidden;
+
+  button::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: wheat;
+    content: "";
+    transform: translateX(-105%);
+
+    transition: transform 0.3s;
+  }
+  button:hover::before {
+    transform: translateX(105%);
+  }
+  button::after {
+    position: absolute;
+    top: 90%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: wheat;
+    content: "";
+    transform: translateX(105%);
+    transition: transform 0.3s;
+    transition-delay: 0.3s;
+  }
+  button:hover::after {
+    transform: translateX(-2%);
+  }
 }
 .button1 {
   position: absolute;
-  top: 400px;
+  top: 200px;
   left: 20px;
   overflow: hidden;
 }
 .button2 {
   position: absolute;
-  top: 600px;
+  top: 400px;
   right: 20px;
   overflow: hidden;
 }
 .button3 {
   position: absolute;
   left: 20px;
-  top: 800px;
+  top: 600px;
   overflow: hidden;
 }
 button:hover {
@@ -61,6 +93,7 @@ button:hover {
 }
 .tabs {
   overflow: hidden;
+  margin: 0 150px;
   .tab::before {
     position: absolute;
     top: 0;
@@ -120,35 +153,4 @@ button:hover {
 .tabAnimation {
   opacity: 1;
   transform: translateX(0) rotate(0);
-}
-
-button::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: wheat;
-  content: "";
-  transform: translateX(-105%);
-
-  transition: transform 0.3s;
-}
-button:hover::before {
-  transform: translateX(105%);
-}
-button::after {
-  position: absolute;
-  top: 90%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: wheat;
-  content: "";
-  transform: translateX(105%);
-  transition: transform 0.3s;
-  transition-delay: 0.3s;
-}
-button:hover::after {
-  transform: translateX(-2%);
 }
